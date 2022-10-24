@@ -10,7 +10,7 @@ jobs:
   build_caddy_with_naive-amd64:
     runs-on: ubuntu-18.04
     env:
-      BUNDLE: caddy-forwardproxy-naive
+      BUNDLE: caddy-forwardproxy-naive-amd64
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v3
@@ -38,7 +38,7 @@ jobs:
   build_caddy_with_naive-arm64:
     runs-on: ubuntu-18.04
     env:
-      BUNDLE: caddy-forwardproxy-naive
+      BUNDLE: caddy-forwardproxy-naive-arm64
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v3
@@ -70,7 +70,7 @@ jobs:
   build_caddy_with_naive-s390x:
     runs-on: ubuntu-18.04
     env:
-      BUNDLE: caddy-forwardproxy-naive
+      BUNDLE: caddy-forwardproxy-naive-s390x
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v3
