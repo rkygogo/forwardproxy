@@ -1,16 +1,12 @@
 name: Build
 on:
-  push:
-    branches: [naive]
-    paths-ignore: [README.md]
-  release:
-    types: [published]
+ workflow_dispatch:
 defaults:
   run:
     shell: bash
 jobs:
   build_caddy_with_naive:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-18.04
     env:
       BUNDLE: caddy-forwardproxy-naive
     steps:
