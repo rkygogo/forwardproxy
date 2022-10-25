@@ -17,7 +17,7 @@ jobs:
         with:
           go-version: ^1.18.1
       - run: go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
-      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=$PWD
+      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive
       - name: Pack naiveproxy assets
         run: |
           mkdir ${{ env.BUNDLE }}
@@ -49,7 +49,7 @@ jobs:
       - run: CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC=aarch64-linux-gnu-gcc
       - run: go env -w GO111MODULE=on
       - run: go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
-      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=$PWD
+      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive
       - name: Pack naiveproxy assets
         run: |
           mkdir ${{ env.BUNDLE }}
@@ -81,7 +81,7 @@ jobs:
       - run: CGO_ENABLED=1 GOOS=linux GOARCH=s390x CC=s390x-linux-gnu-gcc
       - run: go env -w GO111MODULE=on
       - run: go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
-      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=$PWD
+      - run: ~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive
       - name: Pack naiveproxy assets
         run: |
           mkdir ${{ env.BUNDLE }}
