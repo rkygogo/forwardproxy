@@ -8,7 +8,7 @@ defaults:
     shell: bash
 jobs:
   build_caddy_with_naive-amd64:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     env:
       BUNDLE: caddy-forwardproxy-naive-amd64
     steps:
@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build_caddy_with_naive-arm64:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     env:
       BUNDLE: caddy-forwardproxy-naive-arm64
     steps:
@@ -68,7 +68,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build_caddy_with_naive-s390x:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     env:
       BUNDLE: caddy-forwardproxy-naive-s390x
     steps:
