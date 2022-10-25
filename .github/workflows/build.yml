@@ -56,11 +56,11 @@ jobs:
       run: |
         mkdir release-ready
         cd ./release-tmp
-        tar -zcvf ../release-ready/caddy-${{ matrix.config.name }}.tar.gz *
+        tar -zcvf ../release-ready/caddy2-naive-${{ matrix.config.name }}.tar.gz *
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: caddy-${{ github.sha }}-${{ matrix.config.name }}
+        name: caddy2-naive-${{ github.sha }}-${{ matrix.config.name }}
         path: ./release-ready/*
         
     - name: Upload to GitHub Release for other platform
@@ -68,6 +68,6 @@ jobs:
       if: github.event_name == 'release' && matrix.config.release && matrix.config.GOOS != 'windows'
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./release-ready/caddy-${{ matrix.config.name }}.tar.gz
+        file: ./release-ready/caddy2-naive-${{ matrix.config.name }}.tar.gz
         tag: ${{ github.ref }}
         overwrite: true
